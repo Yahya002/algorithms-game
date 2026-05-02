@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cjvftk7l58y64"]
+
+[ext_resource type="Texture2D" uid="uid://bacyvrutcwobj" path="res://sprites/scifiUnit_07.png" id="1_asyws"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wftpd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wftpd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_asyws")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[node name="Wagon" type="CharacterBody2D" unique_id=592210744]
+motion_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1223711999]
+shape = SubResource("CircleShape2D_wftpd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1590115630]
+sprite_frames = SubResource("SpriteFrames_wftpd")
+animation = &"up"
+frame_progress = 0.39746237
