@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ur12lqgklrih"]
+
+[ext_resource type="Texture2D" uid="uid://cic8sgdm2hjg0" path="res://sprites/tilemap_dungeon.png" id="1_4phs1"]
+[ext_resource type="Script" uid="uid://i47bd3hp2c2j" path="res://scripts/classes/anim_trigger_area.gd" id="2_7evtw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7evtw"]
+atlas = ExtResource("1_4phs1")
+region = Rect2(144, 112, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wea8e"]
+
+[node name="RailDownToLeft" type="Node2D" unique_id=103418525]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=463569145]
+texture = SubResource("AtlasTexture_7evtw")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1535569903]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("2_7evtw")
+anim = "down_to_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=249992440]
+shape = SubResource("CircleShape2D_wea8e")

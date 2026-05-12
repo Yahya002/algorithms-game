@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Grad"
-run/main_scene="uid://4rry3n1de5fk"
+run/main_scene="uid://di77ne3uehfhi"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Game="*uid://md2gfha5d3fb"
+GameManager="*uid://bdkaluy1g0fum"
 
 [display]
 
