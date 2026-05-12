@@ -16,10 +16,45 @@ tracks/0/keys = {
 "update": 0,
 "values": [Rect2(80, 112, 16, 16)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/ContentSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D/ContentSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_gqd3d"]
 resource_name = "open"
-length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -44,11 +79,120 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0.8, 1.2), Vector2(1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D/ContentSprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.36666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D/ContentSprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.36666667, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -10)]
+}
+
+[sub_resource type="Animation" id="Animation_w02o5"]
+resource_name = "shift_left"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-16, 16), Vector2(-32, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ilhio"]
+resource_name = "shift_right"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(16, -16), Vector2(32, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_oii8l"]
+resource_name = "weigh_less"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -8)]
+}
+
+[sub_resource type="Animation" id="Animation_yue2o"]
+resource_name = "weigh_more"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -16)]
+}
+
+[sub_resource type="Animation" id="Animation_yhylo"]
+resource_name = "weigh_same"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -10)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yue2o"]
 _data = {
 &"RESET": SubResource("Animation_sy5e1"),
-&"open": SubResource("Animation_gqd3d")
+&"open": SubResource("Animation_gqd3d"),
+&"shift_left": SubResource("Animation_w02o5"),
+&"shift_right": SubResource("Animation_ilhio"),
+&"weigh_less": SubResource("Animation_oii8l"),
+&"weigh_more": SubResource("Animation_yue2o"),
+&"weigh_same": SubResource("Animation_yhylo")
 }
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oii8l"]
@@ -62,9 +206,17 @@ region = Rect2(80, 112, 16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gqd3d"]
 size = Vector2(16, 16)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sy5e1"]
-radius = 1.0
-height = 12.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_oii8l"]
+radius = 5.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_oii8l"]
+font_size = 8
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sy5e1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gqd3d"]
 
 [node name="Chest" type="Node2D" unique_id=9277344 groups=["chests"]]
 script = ExtResource("1_sy5e1")
@@ -74,6 +226,10 @@ libraries/ = SubResource("AnimationLibrary_yue2o")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=751996313]
 texture = SubResource("AtlasTexture_sy5e1")
+
+[node name="ContentSprite" type="Sprite2D" parent="Sprite2D" unique_id=2016323147]
+visible = false
+scale = Vector2(0.5, 0.5)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1940900987]
 z_index = 10
@@ -87,8 +243,37 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=312414810]
-position = Vector2(-1, 9)
-shape = SubResource("CapsuleShape2D_sy5e1")
+position = Vector2(-1, 2)
+shape = SubResource("CircleShape2D_oii8l")
+
+[node name="Label" type="Label" parent="." unique_id=225758712]
+visible = false
+offset_left = -20.0
+offset_top = -11.0
+offset_right = 20.0
+offset_bottom = 12.0
+text = "1"
+label_settings = SubResource("LabelSettings_oii8l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeftComparator" type="Area2D" parent="." unique_id=379593116]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftComparator" unique_id=1436952020]
+position = Vector2(18, 24)
+shape = SubResource("CircleShape2D_sy5e1")
+
+[node name="RightComparator" type="Area2D" parent="." unique_id=1743692202]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightComparator" unique_id=629338575]
+position = Vector2(-18, 24)
+shape = SubResource("CircleShape2D_gqd3d")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="area_entered" from="Area2D2" to="." method="_on_area_2d_2_area_entered"]
+[connection signal="area_entered" from="LeftComparator" to="." method="_on_left_comparator_area_entered"]
+[connection signal="area_exited" from="LeftComparator" to="." method="_on_left_comparator_area_exited"]
+[connection signal="area_entered" from="RightComparator" to="." method="_on_right_comparator_area_entered"]
+[connection signal="area_exited" from="RightComparator" to="." method="_on_right_comparator_area_exited"]

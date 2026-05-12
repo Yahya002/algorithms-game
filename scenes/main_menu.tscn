@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://di77ne3uehfhi"]
+
+[ext_resource type="Script" uid="uid://cnj6nbfodprlf" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://dm781vdwn4xc" path="res://sprites/previews/linear-search-01.png" id="1_l6cm7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vue75"]
+font_size = 64
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_l6cm7"]
+font_size = 40
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ekxnf"]
+font_size = 36
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ekxnf"]
+load_path = "res://.godot/imported/linear-search-01.png-4f38108807f22de2cb6cf3efda5bee2d.ctex"
+
+[node name="MainMenu" type="Control" unique_id=1319049244]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekxnf")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=677526788]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 128
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=635161532]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=325249714]
+layout_mode = 2
+text = "Algorithm Game"
+label_settings = SubResource("LabelSettings_vue75")
+horizontal_alignment = 1
+
+[node name="Supervisor" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1696441378]
+layout_mode = 2
+text = "Supervisor: Prof. Dr. Yaroub Dayoub"
+label_settings = SubResource("LabelSettings_l6cm7")
+horizontal_alignment = 1
+
+[node name="Students" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1323208500]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Ali Moussa Sulieman
+Rowa Hafez Sulieman
+Tammam Kamel Abdo
+Yahya Wafik Ali"
+label_settings = SubResource("LabelSettings_ekxnf")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1006792780]
+layout_mode = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 128
+
+[node name="LevelContainer" type="HFlowContainer" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=528508778]
+layout_mode = 2
+theme_override_constants/h_separation = 64
+theme_override_constants/v_separation = 8
+alignment = 1
+
+[node name="LinearSearch" type="TextureButton" parent="MarginContainer/VBoxContainer/MarginContainer/LevelContainer" unique_id=1264127763]
+custom_minimum_size = Vector2(324, 200)
+layout_mode = 2
+texture_normal = SubResource("CompressedTexture2D_ekxnf")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="BinarySearch" type="TextureButton" parent="MarginContainer/VBoxContainer/MarginContainer/LevelContainer" unique_id=544485473]
+custom_minimum_size = Vector2(324, 200)
+layout_mode = 2
+texture_normal = ExtResource("1_l6cm7")
+ignore_texture_size = true
+stretch_mode = 6
+
+[connection signal="button_down" from="MarginContainer/VBoxContainer/MarginContainer/LevelContainer/LinearSearch" to="." method="_on_linear_search_button_down"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer/MarginContainer/LevelContainer/BinarySearch" to="." method="_on_binary_search_button_down"]
