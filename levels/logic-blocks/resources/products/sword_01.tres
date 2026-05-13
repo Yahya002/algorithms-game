@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ProductData" format=3 uid="uid://bpjv00c7eb13f"]
+
+[ext_resource type="Script" uid="uid://bng6pkj1leuaj" path="res://levels/logic-blocks/scripts/classes/product_data.gd" id="1_73jhp"]
+[ext_resource type="Texture2D" uid="uid://cic8sgdm2hjg0" path="res://sprites/tilemap_dungeon.png" id="2_0q7dl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15wr4"]
+atlas = ExtResource("2_0q7dl")
+region = Rect2(128, 128, 16, 16)
+
+[resource]
+script = ExtResource("1_73jhp")
+id = 4
+price = 12
+product_name = "Sword"
+texture = SubResource("AtlasTexture_15wr4")
+metadata/_custom_type_script = "uid://bng6pkj1leuaj"

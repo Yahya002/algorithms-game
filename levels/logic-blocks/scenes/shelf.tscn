@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c3ud34ygfld23"]
+
+[ext_resource type="Texture2D" uid="uid://cic8sgdm2hjg0" path="res://sprites/tilemap_dungeon.png" id="1_61828"]
+[ext_resource type="Script" uid="uid://cj31vnu5kaeje" path="res://levels/logic-blocks/scripts/shelf.gd" id="1_qnpha"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnpha"]
+atlas = ExtResource("1_61828")
+region = Rect2(0, 96, 16, 16)
+
+[node name="Shelf" type="Node2D" unique_id=2130956823]
+script = ExtResource("1_qnpha")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=850326939]
+texture = SubResource("AtlasTexture_qnpha")

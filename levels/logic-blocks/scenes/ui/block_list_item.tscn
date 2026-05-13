@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://d1oxlwko7xc8v"]
+
+[ext_resource type="Script" uid="uid://w3mddeuh6n8i" path="res://levels/logic-blocks/scripts/block_list_item.gd" id="1_givbx"]
+
+[node name="HFlowContainer" type="HFlowContainer" unique_id=977382522]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_givbx")
+
+[node name="Label" type="Label" parent="." unique_id=1569143589]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="." unique_id=1293439768]
+visible = false
+layout_mode = 2
+
+[node name="OptionButton2" type="OptionButton" parent="." unique_id=54544547]
+visible = false
+layout_mode = 2
+
+[node name="Button" type="Button" parent="." unique_id=1251891363]
+layout_mode = 2
+text = "x"
+
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="OptionButton2" to="." method="_on_option_button_2_item_selected"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

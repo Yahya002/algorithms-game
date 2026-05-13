@@ -1,0 +1,2 @@
+extends LogicBlock
+class_name ReturnBlock

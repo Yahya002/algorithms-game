@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bchgkvwdxto7a"]
+
+[ext_resource type="Texture2D" uid="uid://cic8sgdm2hjg0" path="res://sprites/tilemap_dungeon.png" id="1_f0te0"]
+[ext_resource type="Script" uid="uid://djovmbwwgqc50" path="res://levels/logic-blocks/scripts/rails/rail_horizontal.gd" id="1_ujibv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujibv"]
+atlas = ExtResource("1_f0te0")
+region = Rect2(160, 80, 16, 16)
+
+[node name="RailHorizontal" type="Node2D" unique_id=1841408446]
+script = ExtResource("1_ujibv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=250084649]
+texture = SubResource("AtlasTexture_ujibv")
