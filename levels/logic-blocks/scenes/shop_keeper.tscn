@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b1l0wp2xaxx01"]
+
+[ext_resource type="Script" uid="uid://dc85uajd1gx68" path="res://levels/logic-blocks/scripts/shop_keeper.gd" id="1_5hts5"]
+[ext_resource type="Texture2D" uid="uid://cic8sgdm2hjg0" path="res://sprites/tilemap_dungeon.png" id="1_wwyut"]
+[ext_resource type="Script" uid="uid://o7qi3hesblid" path="res://levels/logic-blocks/scripts/classes/logic_blocks.gd" id="2_cg5yg"]
+[ext_resource type="Script" uid="uid://d15k8qoduddm2" path="res://levels/logic-blocks/scripts/classes/move_block.gd" id="3_sjd2o"]
+
+[sub_resource type="Resource" id="Resource_0djyr"]
+script = ExtResource("3_sjd2o")
+metadata/_custom_type_script = "uid://d15k8qoduddm2"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fqqa1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hts5"]
+atlas = ExtResource("1_wwyut")
+region = Rect2(32, 112, 16, 16)
+
+[node name="ShopKeeper" type="CharacterBody2D" unique_id=1799324777]
+script = ExtResource("1_5hts5")
+block_queue = Array[ExtResource("2_cg5yg")]([SubResource("Resource_0djyr")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1273036759]
+shape = SubResource("CircleShape2D_fqqa1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1128953821]
+texture = SubResource("AtlasTexture_5hts5")
+
+[node name="InstructionTimer" type="Timer" parent="." unique_id=1179447512]
+
+[node name="CustomerTimer" type="Timer" parent="." unique_id=1110224204]
+wait_time = 30.0

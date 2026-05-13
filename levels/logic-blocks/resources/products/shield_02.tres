@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ProductData" format=3 uid="uid://3g6slwglgvdk"]
+
+[ext_resource type="Script" uid="uid://bng6pkj1leuaj" path="res://levels/logic-blocks/scripts/classes/product_data.gd" id="1_5qfq7"]
+[ext_resource type="Texture2D" uid="uid://cic8sgdm2hjg0" path="res://sprites/tilemap_dungeon.png" id="2_8rg6b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4qie"]
+atlas = ExtResource("2_8rg6b")
+region = Rect2(96, 128, 16, 16)
+
+[resource]
+script = ExtResource("1_5qfq7")
+id = 2
+price = 15
+product_name = "Large Shield"
+texture = SubResource("AtlasTexture_v4qie")
+metadata/_custom_type_script = "uid://bng6pkj1leuaj"

@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://c3ud34ygfld23" path="res://levels/logic-blocks/scenes/shelf.tscn" id="9_51c08"]
 [ext_resource type="PackedScene" uid="uid://b1l0wp2xaxx01" path="res://levels/logic-blocks/scenes/shop_keeper.tscn" id="10_s8ppg"]
 [ext_resource type="Script" uid="uid://myy3xvj0ykx4" path="res://levels/logic-blocks/scripts/block_container.gd" id="11_d4cdj"]
-[ext_resource type="Script" uid="uid://o7qi3hesblid" path="res://levels/logic-blocks/scripts/classes/logic_blocks.gd" id="11_odqvk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jgdyc"]
 texture = ExtResource("1_jfkr6")
@@ -132,8 +131,7 @@ position = Vector2(185, 119)
 
 [node name="ShopKeeper" parent="." unique_id=1799324777 instance=ExtResource("10_s8ppg")]
 position = Vector2(296, 214)
-block_queue = Array[ExtResource("11_odqvk")]([])
-order = ExtResource("3_nbrx1")
+block_queue = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1115494812]
 
@@ -157,21 +155,30 @@ size_flags_vertical = 0
 layout_mode = 2
 
 [node name="OptionButton" type="OptionButton" parent="CanvasLayer/MarginContainer/PanelContainer/VBoxContainer" unique_id=358571194]
-unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 allow_reselect = true
-item_count = 4
+item_count = 8
 popup/item_0/text = "Move"
 popup/item_0/id = 0
 popup/item_1/text = "Jump"
-popup/item_1/id = 1
-popup/item_2/text = "Compare"
-popup/item_2/id = 2
-popup/item_3/text = "Return"
-popup/item_3/id = 3
+popup/item_1/id = 0
+popup/item_1/separator = true
+popup/item_2/text = "Beginning"
+popup/item_2/id = 1
+popup/item_3/text = "Compare"
+popup/item_3/id = 2
+popup/item_3/separator = true
+popup/item_4/text = "Greater"
+popup/item_4/id = 2
+popup/item_5/text = "Equal"
+popup/item_5/id = 3
+popup/item_6/text = "Lesser"
+popup/item_6/id = 4
+popup/item_7/text = "Return"
+popup/item_7/id = 5
 
 [node name="BlockContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/VBoxContainer" unique_id=640249980]
 custom_minimum_size = Vector2(300, 100)

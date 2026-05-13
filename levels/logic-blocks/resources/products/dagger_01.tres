@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ProductData" format=3 uid="uid://d3y8507cf3mev"]
+
+[ext_resource type="Script" uid="uid://bng6pkj1leuaj" path="res://levels/logic-blocks/scripts/classes/product_data.gd" id="1_s6u6a"]
+[ext_resource type="Texture2D" uid="uid://cic8sgdm2hjg0" path="res://sprites/tilemap_dungeon.png" id="2_1xfne"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6l1c1"]
+atlas = ExtResource("2_1xfne")
+region = Rect2(112, 128, 16, 16)
+
+[resource]
+script = ExtResource("1_s6u6a")
+id = 3
+price = 5
+product_name = "Dagger"
+texture = SubResource("AtlasTexture_6l1c1")
+metadata/_custom_type_script = "uid://bng6pkj1leuaj"
