@@ -9,3 +9,4 @@ func setup(data: ProductData):
 	product_name = data.product_name
 	price = data.price
 	$Sprite2D.texture = data.texture
+	$RichTextLabel.text = "[font_size=8][center][color=yellow]%s[/color][/center][/font_size]" % id

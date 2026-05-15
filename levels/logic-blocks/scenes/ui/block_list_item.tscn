@@ -2,26 +2,48 @@
 
 [ext_resource type="Script" uid="uid://w3mddeuh6n8i" path="res://levels/logic-blocks/scripts/block_list_item.gd" id="1_givbx"]
 
-[node name="HFlowContainer" type="HFlowContainer" unique_id=977382522]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="BlockListItem" type="VBoxContainer" unique_id=1765435690]
+offset_right = 25.0
+offset_bottom = 62.0
 script = ExtResource("1_givbx")
 
-[node name="Label" type="Label" parent="." unique_id=1569143589]
+[node name="HSeparator" type="HSeparator" parent="." unique_id=590794903]
 layout_mode = 2
 
-[node name="OptionButton" type="OptionButton" parent="." unique_id=1293439768]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=619844052]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+
+[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer" unique_id=977382522]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HFlowContainer" unique_id=1569143589]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="OptionButton1" type="OptionButton" parent="MarginContainer/HFlowContainer" unique_id=1293439768]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="OptionButton2" type="OptionButton" parent="." unique_id=54544547]
+[node name="OptionButton2" type="OptionButton" parent="MarginContainer/HFlowContainer" unique_id=54544547]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="Button" type="Button" parent="." unique_id=1251891363]
+[node name="Label2" type="Label" parent="MarginContainer/HFlowContainer" unique_id=2046102194]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/HFlowContainer" unique_id=1251891363]
+unique_name_in_owner = true
 layout_mode = 2
 text = "x"
 
-[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
-[connection signal="item_selected" from="OptionButton2" to="." method="_on_option_button_2_item_selected"]
-[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="item_selected" from="MarginContainer/HFlowContainer/OptionButton1" to="MarginContainer/HFlowContainer" method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="MarginContainer/HFlowContainer/OptionButton2" to="MarginContainer/HFlowContainer" method="_on_option_button_2_item_selected"]
+[connection signal="button_up" from="MarginContainer/HFlowContainer/Button" to="." method="_on_button_button_up"]

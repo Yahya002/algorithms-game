@@ -8,3 +8,6 @@ enum JUMP_POSITION {
 	MIDDLE,
 	END,
 }
+
+func _init() -> void:
+	title = "Jump"

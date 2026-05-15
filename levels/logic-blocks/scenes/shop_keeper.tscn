@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cic8sgdm2hjg0" path="res://sprites/tilemap_dungeon.png" id="1_wwyut"]
 [ext_resource type="Script" uid="uid://o7qi3hesblid" path="res://levels/logic-blocks/scripts/classes/logic_blocks.gd" id="2_cg5yg"]
 [ext_resource type="Script" uid="uid://d15k8qoduddm2" path="res://levels/logic-blocks/scripts/classes/move_block.gd" id="3_sjd2o"]
+[ext_resource type="Texture2D" uid="uid://26hof00dcvxa" path="res://sprites/tilemap_packed.png" id="5_sjd2o"]
 
 [sub_resource type="Resource" id="Resource_0djyr"]
 script = ExtResource("3_sjd2o")
@@ -14,6 +15,61 @@ metadata/_custom_type_script = "uid://d15k8qoduddm2"
 [sub_resource type="AtlasTexture" id="AtlasTexture_5hts5"]
 atlas = ExtResource("1_wwyut")
 region = Rect2(32, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjd2o"]
+atlas = ExtResource("5_sjd2o")
+region = Rect2(304, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0djyr"]
+atlas = ExtResource("5_sjd2o")
+region = Rect2(144, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lc0gs"]
+atlas = ExtResource("5_sjd2o")
+region = Rect2(160, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bm76k"]
+atlas = ExtResource("5_sjd2o")
+region = Rect2(176, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0c7qm"]
+atlas = ExtResource("5_sjd2o")
+region = Rect2(192, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2db23"]
+atlas = ExtResource("5_sjd2o")
+region = Rect2(256, 144, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q2pwc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjd2o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0djyr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lc0gs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bm76k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0c7qm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2db23")
+}],
+"loop": true,
+"name": &"waiting",
+"speed": 5.0
+}]
 
 [node name="ShopKeeper" type="CharacterBody2D" unique_id=1799324777]
 script = ExtResource("1_5hts5")
@@ -29,3 +85,8 @@ texture = SubResource("AtlasTexture_5hts5")
 
 [node name="CustomerTimer" type="Timer" parent="." unique_id=1110224204]
 wait_time = 30.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1769504911]
+position = Vector2(-3, 6.9999995)
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_q2pwc")

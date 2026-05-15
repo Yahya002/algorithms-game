@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://fa23rurymvdr"]
+
+[ext_resource type="Texture2D" uid="uid://cic8sgdm2hjg0" path="res://sprites/tilemap_dungeon.png" id="1_7xa0x"]
+[ext_resource type="Script" uid="uid://bsswqw3bir5g4" path="res://levels/logic-blocks/scripts/counter.gd" id="1_cd0hl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cd0hl"]
+atlas = ExtResource("1_7xa0x")
+region = Rect2(0, 96, 16, 16)
+
+[node name="Counter" type="Node2D" unique_id=1446161150]
+script = ExtResource("1_cd0hl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=890989271]
+texture = SubResource("AtlasTexture_cd0hl")
