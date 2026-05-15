@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bxdfwm5lh4hdv"]
+
+[ext_resource type="Script" uid="uid://b00mrsnw47d5p" path="res://levels/logic-blocks/scripts/customer.gd" id="1_dv4vp"]
+[ext_resource type="Texture2D" uid="uid://cic8sgdm2hjg0" path="res://sprites/tilemap_dungeon.png" id="1_i4482"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dv4vp"]
+atlas = ExtResource("1_i4482")
+region = Rect2(64, 144, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_prm8t"]
+
+[node name="Customer" type="CharacterBody2D" unique_id=1395616727]
+script = ExtResource("1_dv4vp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1306513870]
+texture = SubResource("AtlasTexture_dv4vp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=955695154]
+shape = SubResource("CircleShape2D_prm8t")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1890403305]
+modulate = Color(1, 1, 1, 0.50980395)
+position = Vector2(9, 0)
+scale = Vector2(0.6, 0.6)
