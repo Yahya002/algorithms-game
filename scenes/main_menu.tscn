@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://di77ne3uehfhi"]
 
 [ext_resource type="Script" uid="uid://cnj6nbfodprlf" path="res://scripts/main_menu.gd" id="1_ekxnf"]
-[ext_resource type="Texture2D" uid="uid://dm781vdwn4xc" path="res://sprites/previews/linear-search-01.png" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://mulyy00lg33f" path="res://sprites/previews/binary-search.png" id="2_ekxnf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vue75"]
 font_size = 64
@@ -63,7 +63,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Ali Moussa Sulieman
 Rowa Hafez Sulieman
-Tammam Kamel Abdo
+Tammam Kammil Abdo
 Yahya Wafik Ali"
 label_settings = SubResource("LabelSettings_ekxnf")
 
@@ -90,7 +90,7 @@ stretch_mode = 6
 [node name="BinarySearch" type="TextureButton" parent="MarginContainer/VBoxContainer/MarginContainer/LevelContainer" unique_id=544485473]
 custom_minimum_size = Vector2(324, 200)
 layout_mode = 2
-texture_normal = ExtResource("1_l6cm7")
+texture_normal = ExtResource("2_ekxnf")
 ignore_texture_size = true
 stretch_mode = 6
 
