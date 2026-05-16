@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b7v45u23kevft"]
+
+[ext_resource type="Script" uid="uid://bgaherjvgeba7" path="res://levels/logic-blocks/scripts/product.gd" id="1_qdfmv"]
+
+[node name="Product" type="Node2D" unique_id=614232028]
+script = ExtResource("1_qdfmv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=218812082]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1065281959]
+visible = false
+texture_filter = 1
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+bbcode_enabled = true
+scroll_active = false

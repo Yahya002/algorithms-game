@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://cf0tehpidp4fr"]
+
+[ext_resource type="Script" uid="uid://c43iv3yhkci23" path="res://levels/logic-blocks/scripts/block_panel.gd" id="1_fakd3"]
+[ext_resource type="Script" uid="uid://myy3xvj0ykx4" path="res://levels/logic-blocks/scripts/block_container.gd" id="1_fco8a"]
+[ext_resource type="Script" uid="uid://o7qi3hesblid" path="res://levels/logic-blocks/scripts/classes/logic_blocks.gd" id="2_5hgb2"]
+[ext_resource type="Script" uid="uid://d15k8qoduddm2" path="res://levels/logic-blocks/scripts/classes/move_block.gd" id="3_1ivnl"]
+[ext_resource type="Script" uid="uid://cq723k1kawxg5" path="res://levels/logic-blocks/scripts/classes/compare_block.gd" id="4_opwfg"]
+[ext_resource type="Script" uid="uid://clspamwoq6bpx" path="res://levels/logic-blocks/scripts/classes/jump_block.gd" id="5_0irkh"]
+[ext_resource type="Script" uid="uid://bunu8wko8awku" path="res://levels/logic-blocks/scripts/classes/return_block.gd" id="6_2gsdu"]
+
+[sub_resource type="Resource" id="Resource_1y3na"]
+script = ExtResource("3_1ivnl")
+metadata/_custom_type_script = "uid://d15k8qoduddm2"
+
+[sub_resource type="Resource" id="Resource_ruyxa"]
+script = ExtResource("4_opwfg")
+metadata/_custom_type_script = "uid://cq723k1kawxg5"
+
+[sub_resource type="Resource" id="Resource_jcn6i"]
+script = ExtResource("5_0irkh")
+metadata/_custom_type_script = "uid://clspamwoq6bpx"
+
+[sub_resource type="Resource" id="Resource_vlehk"]
+script = ExtResource("6_2gsdu")
+metadata/_custom_type_script = "uid://bunu8wko8awku"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hgb2"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0.2509804)
+border_width_left = 2
+border_width_top = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 20
+
+[node name="BlockPanel" type="MarginContainer" unique_id=2043434977]
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+script = ExtResource("1_fakd3")
+block_types = Array[ExtResource("2_5hgb2")]([SubResource("Resource_1y3na"), SubResource("Resource_ruyxa"), SubResource("Resource_jcn6i"), SubResource("Resource_vlehk")])
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=515124465]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer" unique_id=1007812361]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+allow_reselect = true
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=131557263]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5hgb2")
+
+[node name="BlockContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer" unique_id=1986932844]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+script = ExtResource("1_fco8a")

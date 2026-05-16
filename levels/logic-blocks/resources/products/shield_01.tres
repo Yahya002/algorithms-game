@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ProductData" format=3 uid="uid://o6tiw7wspqkm"]
+
+[ext_resource type="Script" uid="uid://bng6pkj1leuaj" path="res://levels/logic-blocks/scripts/classes/product_data.gd" id="1_0akfn"]
+[ext_resource type="Texture2D" uid="uid://cic8sgdm2hjg0" path="res://sprites/tilemap_dungeon.png" id="2_0pha2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnlsn"]
+atlas = ExtResource("2_0pha2")
+region = Rect2(80, 128, 16, 16)
+
+[resource]
+script = ExtResource("1_0akfn")
+id = 1
+price = 10
+product_name = "Round Shield"
+texture = SubResource("AtlasTexture_qnlsn")
+metadata/_custom_type_script = "uid://bng6pkj1leuaj"
