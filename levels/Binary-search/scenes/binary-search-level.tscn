@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://b1mha3afpodos"]
 
 [ext_resource type="Texture2D" uid="uid://ctow6vsviplfj" path="res://sprites/tilemap.png" id="1_grmm7"]
-[ext_resource type="Texture2D" uid="uid://plo3ajumhaqc" path="res://sprites/tilemap_packed.png" id="2_aaew0"]
+[ext_resource type="Texture2D" uid="uid://plo3ajumhaqc" path="res://sprites/tilemap_packed_factory.png" id="2_aaew0"]
 [ext_resource type="Script" uid="uid://db4vsxvudhjsp" path="res://levels/Binary-search/scipts/chest_manager.gd" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://bsytod5jtssg7" path="res://levels/Binary-search/scenes/chest.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://1k6vm4rga2tq" path="res://levels/Binary-search/scenes/player.tscn" id="5_iywne"]
