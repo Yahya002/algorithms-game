@@ -1,0 +1,212 @@
+[gd_scene format=3 uid="uid://1k6vm4rga2tq"]
+
+[ext_resource type="Script" uid="uid://dwmfskdrxik38" path="res://levels/Binary-search/scipts/player.gd" id="1_qir2g"]
+[ext_resource type="Texture2D" uid="uid://qu0nbxacj62m" path="res://sprites/character_robot_sheet.png" id="2_iiy5u"]
+[ext_resource type="Script" uid="uid://dh75ugvc323uv" path="res://levels/Binary-search/scipts/inventory.gd" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://vrlpyi8ksqh2" path="res://sprites/objects/hud_gem_blue.png" id="4_54dqr"]
+[ext_resource type="Script" uid="uid://dam85d76s8y8k" path="res://levels/Binary-search/scipts/key_ui.gd" id="4_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://17sman4hee4s" path="res://sprites/objects/tile_0045.png" id="6_xin57"]
+[ext_resource type="Script" uid="uid://c4kkmaa1rarnk" path="res://levels/Binary-search/scipts/diamond_label.gd" id="7_smehm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3vyb7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0b1y"]
+atlas = ExtResource("2_iiy5u")
+region = Rect2(0, 0, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41elo"]
+atlas = ExtResource("2_iiy5u")
+region = Rect2(0, 512, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54dqr"]
+atlas = ExtResource("2_iiy5u")
+region = Rect2(96, 512, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xin57"]
+atlas = ExtResource("2_iiy5u")
+region = Rect2(192, 512, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1tsc"]
+atlas = ExtResource("2_iiy5u")
+region = Rect2(288, 512, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25a1h"]
+atlas = ExtResource("2_iiy5u")
+region = Rect2(384, 512, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8k3f"]
+atlas = ExtResource("2_iiy5u")
+region = Rect2(480, 512, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogrde"]
+atlas = ExtResource("2_iiy5u")
+region = Rect2(576, 512, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cawk0"]
+atlas = ExtResource("2_iiy5u")
+region = Rect2(672, 512, 96, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qlg0r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0b1y")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_41elo")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_54dqr")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_xin57")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_c1tsc")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_25a1h")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_x8k3f")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_ogrde")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_cawk0")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 30.0
+}]
+
+[node name="player" type="CharacterBody2D" unique_id=52656441]
+z_index = 5
+position = Vector2(99, 165)
+collision_layer = 5
+script = ExtResource("1_qir2g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1254799878]
+shape = SubResource("CircleShape2D_3vyb7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1286275153]
+position = Vector2(0, 1.4305115e-06)
+scale = Vector2(0.33762878, 0.3021738)
+sprite_frames = SubResource("SpriteFrames_qlg0r")
+animation = &"idle"
+frame_progress = 0.41847885
+speed_scale = 0.1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1100436664]
+limit_left = -9999895
+limit_top = -9999832
+limit_right = 10000105
+limit_bottom = 184
+
+[node name="Inventory" type="Node" parent="." unique_id=1605087344]
+script = ExtResource("3_qhqgy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=695796287]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=237714389]
+offset_left = 1.0
+offset_top = 17.0
+offset_right = 63.0
+offset_bottom = 48.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=1436270711]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=900005554]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DiamondIcon" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer/Control" unique_id=953996905]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -7.5
+offset_right = 19.805555
+offset_bottom = 7.5
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("4_54dqr")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="DiamondLabel" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/Control" unique_id=766020198]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -8.5
+offset_bottom = 8.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "3"
+script = ExtResource("7_smehm")
+
+[node name="Control2" type="Control" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=1119022187]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="keyIcon" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer/Control2" unique_id=1665729092]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -10.5
+offset_right = 21.0
+offset_bottom = 10.5
+grow_vertical = 2
+texture = ExtResource("6_xin57")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="KeyLabel" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/Control2" unique_id=1971432447]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -8.5
+offset_bottom = 8.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "5"
+script = ExtResource("4_qlg0r")
+
+[node name="FootstepPlayer" type="AudioStreamPlayer2D" parent="." unique_id=796390548]
+
+[node name="FootstepTimer" type="Timer" parent="." unique_id=339435772]
+wait_time = 0.3
+
+[node name="MessageLabel" type="Label" parent="." unique_id=1257914689]
+anchors_preset = -1
+anchor_right = 0.042534724
+offset_left = -20.0
+offset_top = -69.0
+offset_right = 20.0
+offset_bottom = -46.0
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="timeout" from="FootstepTimer" to="." method="_on_footstep_timer_timeout"]

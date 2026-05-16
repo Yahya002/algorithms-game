@@ -16,5 +16,5 @@ func _on_linear_search_button_down() -> void:
 
 
 func _on_binary_search_button_down() -> void:
-	#get_tree().change_scene_to_file()
+	get_tree().change_scene_to_file("res://levels/Binary-search/scenes/binary-search-level.tscn")
 	pass

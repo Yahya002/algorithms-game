@@ -345,6 +345,7 @@ theme_override_constants/margin_left = 64
 theme_override_constants/margin_top = 64
 theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 64
+metadata/_edit_use_anchors_ = true
 
 [node name="Counter" type="Label" parent="CanvasLayer/MarginContainer" unique_id=689827620]
 unique_name_in_owner = true
@@ -398,3 +399,4 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true

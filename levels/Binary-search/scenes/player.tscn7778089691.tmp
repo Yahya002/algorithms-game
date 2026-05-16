@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://1k6vm4rga2tq"]
+
+[ext_resource type="Script" uid="uid://dwmfskdrxik38" path="res://scripts/player.gd" id="1_qir2g"]
+[ext_resource type="Texture2D" uid="uid://osxh5w5ec058" path="res://assets/sprits/kenney_toon-characters/Robot/Tilesheet/character_robot_sheet.png" id="2_lkt5g"]
+[ext_resource type="Script" uid="uid://dh75ugvc323uv" path="res://scripts/inventory.gd" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://dam85d76s8y8k" path="res://scripts/key_ui.gd" id="4_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://cs175xhfrq627" path="res://assets/sprits/Platformer Art Complete Pack/Base pack/HUD/hud_keyYellow.png" id="6_smehm"]
+[ext_resource type="Texture2D" uid="uid://bmw8coai7f21v" path="res://assets/sprits/Platformer Art Complete Pack/Base pack/HUD/hud_gem_blue.png" id="6_tuyoq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3vyb7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("2_lkt5g")
+region = Rect2(1, 26, 100, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = ExtResource("2_lkt5g")
+region = Rect2(7, 540, 95, 97)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("2_lkt5g")
+region = Rect2(102, 540, 95, 97)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
+atlas = ExtResource("2_lkt5g")
+region = Rect2(197, 540, 95, 97)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
+atlas = ExtResource("2_lkt5g")
+region = Rect2(292, 540, 95, 97)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
+atlas = ExtResource("2_lkt5g")
+region = Rect2(387, 540, 95, 97)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
+atlas = ExtResource("2_lkt5g")
+region = Rect2(482, 540, 95, 97)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
+atlas = ExtResource("2_lkt5g")
+region = Rect2(577, 540, 95, 97)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
+atlas = ExtResource("2_lkt5g")
+region = Rect2(672, 540, 95, 97)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qlg0r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkch")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_qlg0r")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_tuyoq")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_fjrip")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_smehm")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_ur7pv")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_y4r1p")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_d2wvv")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_3v2ag")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_tuyoq"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="player" type="CharacterBody2D" unique_id=52656441]
+position = Vector2(182, 125)
+collision_layer = 5
+script = ExtResource("1_qir2g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1254799878]
+shape = SubResource("CircleShape2D_3vyb7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1286275153]
+position = Vector2(0, 1.4305115e-06)
+scale = Vector2(0.33762878, 0.3021738)
+sprite_frames = SubResource("SpriteFrames_qlg0r")
+animation = &"walk"
+frame_progress = 0.01065108
+speed_scale = 0.1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1100436664]
+
+[node name="Inventory" type="Node" parent="." unique_id=1605087344]
+script = ExtResource("3_qhqgy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=695796287]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=237714389]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 192.0
+offset_bottom = 60.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=1436270711]
+layout_mode = 2
+
+[node name="keyIcon" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=1665729092]
+layout_mode = 2
+texture = ExtResource("6_smehm")
+stretch_mode = 5
+
+[node name="KeyLabel" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=1971432447]
+layout_mode = 2
+text = "5"
+script = ExtResource("4_qlg0r")
+
+[node name="DiamondIcon" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=953996905]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("6_tuyoq")
+stretch_mode = 3
+
+[node name="DiamondLabel" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=766020198]
+layout_mode = 2
+text = "3"
+script = SubResource("GDScript_tuyoq")
